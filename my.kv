@@ -1,0 +1,145 @@
+<TextInput>
+    multiline: False
+    height: 10
+
+<MyGrid>
+    sum_q: sum_q
+    sub_q: sub_q
+    mul_q: mul_q
+    div_q: div_q
+
+    sum_ans: sum_ans
+    sub_ans: sub_ans
+    mul_ans: mul_ans
+    div_ans: div_ans
+
+    sum_check: sum_check
+    sub_check: sub_check
+    mul_check: mul_check
+    div_check: div_check
+
+    GridLayout:
+        cols: 1
+        size: root.width, root.height
+
+        Label:
+            size_hint: 0.3, 0.3
+            font_size: 40
+            text: "Daily Practice"
+            color: 0.73, 0.93, 0.12
+            bold: True
+            # outline_color: 0.73, 0.93, 0.12
+            # outline_width: 2
+            canvas.before:
+                Color:
+                    rgba: 0, 0.2, 0.6, 1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        GridLayout:
+            cols: 3
+            row_default_height: root.height*0.07
+            row_force_default: True
+            spacing: 20, 20
+            padding: 20, 30, 20, 0  # Left, Top, Right, Bottom 
+            
+            Label:
+                text: "Question"
+                color: 0.73, 0.93, 0.12
+                bold: True
+                font_size: 20
+                canvas.before:
+                    Color:
+                        rgba: 0, 0.2, 0.6, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+            Label:
+                text: "Answer"
+                color: 0.73, 0.93, 0.12
+                bold: True
+                font_size: 20
+                canvas.before:
+                    Color:
+                        rgba: 0, 0.2, 0.6, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+            Label:
+                text: "Check"
+                color: 0.73, 0.93, 0.12
+                bold: True
+                font_size: 20
+                canvas.before:
+                    Color:
+                        rgba: 0, 0.2, 0.6, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+            TextInput:
+                id: sum_q
+            
+            TextInput:
+                id: sum_ans
+
+            TextInput:
+                id: sum_check
+                readonly: True
+                
+            TextInput:
+                id: sub_q
+            
+            TextInput:
+                id: sub_ans
+
+            TextInput:
+                id: sub_check
+                readonly: True
+
+            TextInput:
+                id: mul_q
+            
+            TextInput:
+                id: mul_ans
+
+            TextInput:
+                id: mul_check
+                readonly: True
+
+            TextInput:
+                id: div_q
+            
+            TextInput:
+                id: div_ans
+
+            TextInput:
+                id: div_check
+                readonly: True
+                    
+        GridLayout:
+            cols: 2
+            size_hint: 1, 0.2
+            row_default_height: root.height*0.1
+            row_force_default: True
+            padding: 20, 0, 20, 30
+            spacing: 20
+
+            Button:
+                text: "Reset"
+                font_size: "30"
+                on_press: root.question()
+                background_normal: ""
+                background_color: 0, 0.2, 0.6, 1
+            
+            Button:
+                text: "Submit"
+                font_size: "30"
+                on_press: root.check()
+                background_normal: ""
+                background_color: 0, 0.6, 0.2, 1
+    
+    
